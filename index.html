@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Leaderboard | Professional Trading Stats</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="glow-spot"></div>
+
+    <div class="container">
+        <header>
+            <div class="branding">
+                <div class="logo-text">
+                    <h1>Bulk Leaderboard</h1>
+                    <div class="subtitle">Real-time Analytics</div>
+                </div>
+            </div>
+
+            <div id="connection-status" class="status-badge status-live">
+                <div class="dot"></div>
+                <span>Live Feed</span>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <!-- Global Users -->
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Active Users (24H)</span>
+                </div>
+                <div id="stat-active-24h" class="stat-value mono">—</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Total Traders</span>
+                </div>
+                <div id="stat-total-users" class="stat-value mono">—</div>
+            </div>
+
+            <!-- Volume -->
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Volume (24H)</span>
+                </div>
+                <div id="stat-volume-24h" class="stat-value mono">$—</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Volume (7D)</span>
+                </div>
+                <div id="stat-volume-7d" class="stat-value mono">$—</div>
+            </div>
+
+            <!-- Global Meta -->
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Open Interest</span>
+                </div>
+                <div id="stat-oi" class="stat-value mono">$—</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">24h Change</span>
+                </div>
+                <div id="stat-change" class="stat-value mono">—%</div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="section-title">Top Traders</h2>
+            <div class="time-filter">
+                <button class="filter-btn active" data-period="day">24H</button>
+                <button class="filter-btn" data-period="week">7D</button>
+                <button class="filter-btn" data-period="all">All Time</button>
+            </div>
+        </div>
+
+        <div class="leaderboard-container">
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th width="80">Rank</th>
+                        <th>Trader Address</th>
+                        <th class="text-right">Trades</th>
+                        <th class="text-right">Volume</th>
+                        <th class="text-right">Last Activity</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Data injected via app.js -->
+                </tbody>
+            </table>
+            
+            <div id="loader" class="empty-state" style="display: none;">
+                <p>Syncing data from blockchain...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
